@@ -1,0 +1,103 @@
+﻿Q1. What is the KNN algorithm?
+The K-Nearest Neighbors (KNN) algorithm is a simple, non-parametric, instance-based learning algorithm used for classification and regression tasks. In classification, KNN assigns a data point to the class that is most common among its K nearest neighbors. In regression, it predicts the value of a data point based on the average (or weighted average) of its K nearest neighbors' values.
+
+Q2. How do you choose the value of K in KNN?
+Choosing the value of K in KNN is crucial for its performance:
+
+Small K: May lead to overfitting and noisy predictions.
+Large K: May smooth out the predictions too much, losing important details (underfitting).
+Cross-Validation: A common approach is to use cross-validation to test different values of K and select the one that provides the best performance on the validation set.
+Odd Values: Often, an odd number is chosen for K to avoid ties in classification problems.
+Q3. What is the difference between KNN classifier and KNN regressor?
+KNN Classifier: Used for classification tasks. It assigns the class label that is most frequent among the K nearest neighbors.
+KNN Regressor: Used for regression tasks. It predicts a continuous value by averaging the values of the K nearest neighbors.
+Q4. How do you measure the performance of KNN?
+Classification: Metrics such as accuracy, precision, recall, F1-score, ROC-AUC.
+Regression: Metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R² (coefficient of determination).
+Q5. What is the curse of dimensionality in KNN?
+The curse of dimensionality refers to various phenomena that arise when analyzing and organizing data in high-dimensional spaces. In KNN, as the number of dimensions increases, the distance between data points becomes less meaningful and more similar, making it difficult to distinguish between close and distant points. This can lead to poor performance of the KNN algorithm.
+
+Q6. How do you handle missing values in KNN?
+Imputation: Impute missing values using techniques like mean, median, or mode imputation before applying KNN.
+KNN Imputation: Use KNN itself to impute missing values by finding the K nearest neighbors and using their average (or majority class) to fill in the missing value.
+Remove Missing Values: If the number of missing values is small, removing records with missing values can be an option.
+Q7. Compare and contrast the performance of the KNN classifier and regressor. Which one is better for which type of problem?
+KNN Classifier: Best for problems where the goal is to categorize data points into discrete classes. It performs well with low-dimensional data and clear class boundaries.
+KNN Regressor: Best for predicting continuous outcomes. It is effective for problems where the relationship between features and the target variable is non-linear and not easily modeled with parametric methods.
+Suitability: Classification problems (categorical outcomes) use KNN Classifier, whereas regression problems (continuous outcomes) use KNN Regressor.
+Q8. What are the strengths and weaknesses of the KNN algorithm for classification and regression tasks, and how can these be addressed?
+Strengths:
+Simple and intuitive.
+Non-parametric: Makes no assumptions about the data distribution.
+Effective for low-dimensional data.
+Weaknesses:
+Computationally expensive: Requires storing all data and computing distances for each prediction.
+Sensitive to irrelevant features and feature scales.
+Poor performance in high-dimensional spaces due to the curse of dimensionality.
+Addressing Weaknesses:
+Feature Scaling: Normalize or standardize features.
+Feature Selection: Reduce dimensionality using techniques like PCA or feature selection methods.
+Efficient Computation: Use data structures like KD-Trees or Ball Trees for faster nearest neighbor searches.
+Q9. What is the difference between Euclidean distance and Manhattan distance in KNN?
+Euclidean Distance: Measures the straight-line distance between two points in Euclidean space. It is calculated as:
+Euclidean Distance
+=
+∑
+𝑖
+=
+1
+𝑛
+(
+𝑥
+𝑖
+−
+𝑦
+𝑖
+)
+2
+Euclidean Distance= 
+i=1
+∑
+n
+​
+ (x 
+i
+​
+ −y 
+i
+​
+ ) 
+2
+ 
+​
+ 
+Manhattan Distance: Measures the distance between two points along axes at right angles (like the grid-based street distance in a city). It is calculated as:
+Manhattan Distance
+=
+∑
+𝑖
+=
+1
+𝑛
+∣
+𝑥
+𝑖
+−
+𝑦
+𝑖
+∣
+Manhattan Distance= 
+i=1
+∑
+n
+​
+ ∣x 
+i
+​
+ −y 
+i
+​
+ ∣
+Difference: Euclidean distance is more sensitive to large differences in any single dimension due to the squaring term, while Manhattan distance treats each dimension equally.
+Q10. What is the role of feature scaling in KNN?
+Feature scaling is crucial in KNN because the algorithm relies on distance calculations. If features are on different scales, those with larger scales will dominate the distance calculation, potentially leading to biased results. Normalizing or standardizing features ensures that each feature contributes equally to the distance metric, improving the algorithm's performance
